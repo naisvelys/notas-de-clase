@@ -1,0 +1,16 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner teclado = new Scanner(System.in);
+     System.out.print("Escribe el numero de veces que se repite:");
+      int x = teclado.nextInt();
+      for (int i = 1; i <= x; i++){
+        System.out.println(i);
+      }
+        
+    }
+}
