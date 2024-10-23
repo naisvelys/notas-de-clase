@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int tamano;
+
+        
+        do {
+            System.out.println("\nIngrese el numero de estudiantes: ");
+            tamano = teclado.nextInt();
+            teclado.nextLine();
+            System.out.println();
+            System.out.println(" ");
+            
+            if (tamano <=0){
+                System.out.println("\nNumero no valido. Intente de nuevo");
+            } 
+            }while (tamano <=0);
+
+        
+        String[] nombres = new String[tamano];
+        String[] apellidos = new String[tamano];
+        double notas[][] = new double [tamano][3];
+       
+        for (int i = 0; i < tamano; i++) {
+            System.out.println("\nIngrese el nombre del estudiante " + (i + 1) + ":");
+            nombres[i] = teclado.next(); 
+            System.out.println("\nIngrese el apellido del estudiante " + (i + 1) + ":");
+            apellidos[i] = teclado.next();
+            
+            System.out.println("\nIngrese las notas del estudiante");
+            for (int j = 0; j < notas[i].length; j++){
+                System.out.println("Nota: " + (j + 1) + ": ");
+                notas[i][j] = teclado.nextDouble();
+                teclado.nextLine();
+            }
+            System.out.println("---------------------");
+        }
+
+       
+        System.out.println("los nombres ingresados fueron: ");
+        System.out.println(" ");
+        
+        double notaDefinitiva;
+        
+        for (int i = 0; i < nombres.length; i++) {
+            notaDefinitiva = 0;
+            System.out.println(nombres[i] + " " + apellidos[i]);
+                System.out.println("Estudiante" + (i + 1) + ": " + nombres[i] + (" ") + apellidos[i]);
+                for (int j = 0; j < notas[i].length; j++){
+                    System.out.println("Sus notas son: "+ notas [i][j]);
+                    notaDefinitiva= notaDefinitiva + notas[i][j];
+                    notaDefinitiva = notaDefinitiva/3;
+                }
+                System.out.println("La nota definitiva es: " + notaDefinitiva);
+                System.out.println(" ");
+        }
+    }
+}
